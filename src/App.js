@@ -1,23 +1,47 @@
-import logo from './logo.svg';
+import React, { useEffect, useState} from "react";
 import './App.css';
+import WeatherDetails from './componants/WeatherDetails';
+import WeatherBox from './componants/WeatherBox';
+import WeatherData from './componants/WeatherData';
+import LineChart from './componants/LineChart'
 
 function App() {
+  
+  const [weatherDetails, setWeatherDetails] = useState(WeatherData[0]);
+  const [selectedCardKey, setSelectedCardKey] = useState(0);
+  
+
+  const clickHandler = (data,key) => {
+    setSelectedCardKey(key)
+    setWeatherDetails(data)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='weatherBox'>
+      <WeatherDetails data={weatherDetails}/>
+      
+      <LineChart data={weatherDetails} />
+      
+     
+      <div style={{display:"flex"}}>
+      {
+        WeatherData.map((item, index) => {
+          return(
+           
+               <WeatherBox selectedCard={selectedCardKey == index ? 'selected':''} key={index} mykey={index} data={item} click={(data,key) => {clickHandler(data,key)}} />
+           
+           
+          )
+        })
+      }
+     
+      
+ 
+      </div>
+      
+      
+      </div>
+       
     </div>
   );
 }

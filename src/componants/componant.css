@@ -1,0 +1,54 @@
+h3{
+    color: white;
+}
+.ml-10{
+    margin-left: 10px;
+}
+.pl-10{
+    padding-left: 10px;
+}
+.lightFont{
+    font-weight: 400;
+}
+.pd-10{
+    padding:10px
+}
+.weather-item{
+  
+    border-radius:10px;
+    display:flex;
+     flex-direction:column ;
+     justify-content:center;
+     align-items:center;
+     min-height: 232px;
+}
+.selected{
+      background-color:rgb(83 87 89);
+}
+.weather-detail{
+    display:flex;
+    flex-direction:row;
+    color:white
+}
+.tab-navigator-pr {
+    display:flex;
+    flex-direction:row;
+    color:white;
+    padding:20px
+}
+.Precipitation{
+    border-right: 3px solid gray;
+    padding-right:10px
+}
+.Humidity{
+    border-right: 3px solid gray;
+    padding-right:10px;
+    padding-left:10px;
+}
+.Wind{
+    padding-left:10px;
+}
+.bottom-selector{
+    border-bottom: 3px solid lightyellow;
+    margin-top:5px
+}
